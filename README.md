@@ -1,7 +1,6 @@
-# CS 33 DSA Repository
+# CS 33 Implementation Repository
 
-This repository contains implementations of data structures and algorithms in CS 33 so far.
-Here is a comprehensive list of the implementations included in this repository:
+This repository contains implementations of data structures and algorithms in CS 33 so far. It is currently unfinished and not up-to-date with the latest CS 33 lessons. Below is a comprehensive list of the implementations currently included in this repository.
 
 ## LE 1
 
@@ -27,7 +26,7 @@ Here is a comprehensive list of the implementations included in this repository:
 ## Utils
 Some of the above implementations use already known data structures, so they are also in this repository.
 Here is a list of these data structures:
-- [Union Find / Disjoint Set Union (Python)](utils/union_find.py)
+- Union Find / Disjoint Set Union ([Python](utils/union_find.py))
 
 ## Notes
-- The code in this repository uses verbose variable names and long comments to help you better understand a data structure or algorithm. However, you may want to use shorter variable names (`node_count` instead of `n`) and use types with less overhead (e.g. `list` instead of `dict` for adjacency lists) when you implement these data structures and algorithms yourself to save time and byte size.
+- The code in this repository uses verbose variable names and long comments to help you better understand a data structure or algorithm. However, you may want to use shorter variable names (`node_count` instead of `n`) and use types with less overhead (e.g. `list` instead of `dict` for adjacency lists) when you implement these data structures and algorithms yourself to save time and reduce code file sizes.
