@@ -13,24 +13,6 @@ int64_t randint64();
 // ===========
 
 
-struct AVL {
-    /**
-     * An AVL tree is a binary search tree implementation that "rotates"
-     * itself if its two subtrees are unbalanced after any operation to
-     * ensure that it remains balanced.
-     * 
-     * Given an AVL with n nodes, these are its operations and their time complexities:
-     *     avl_search: O(log n)
-     *     avl_insert: O(log n)
-     *     avl_delete: O(log n)
-     */
-    int64_t value;
-    int height;
-    struct AVL *left;
-    struct AVL *right;
-};
-
-
 struct SplitResult {
     /**
      * Since C functions cannot return tuples, we instead create a struct
