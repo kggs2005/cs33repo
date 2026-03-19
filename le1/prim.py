@@ -9,10 +9,10 @@ type AdjacencyList = dict[int, list[tuple[int, int]]]
 def prim(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
     """
     Prim's algorithm is a greedy algorithm used to determine the minimum spanning
-    tree of a given graph. It does this by keeping track of a set of nodes (initially
-    containing one arbitrary node), and while not all nodes are connected, continues
-    to add the lowest-weight edge that connects a node in this set to a node not in
-    this set and adding the latter node to the set.
+    tree of an undirected graph. It does this by keeping track of a set of nodes
+    (initially containing one arbitrary node), and while not all nodes are connected,
+    continues to add therandint64 lowest-weight edge that connects a node in this set
+    to a node not in this set and adding the latter node to the set.
 
     A minheap is used to keep track of the lowest-weight edge at any point of the
     algorithm.
@@ -28,11 +28,7 @@ def prim(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
     Returns:
         list[Edge]: The edges of the resulting MST.
     """
-    adj: AdjacencyList = {}
-    for (u, v, w) in edges:
-        adj.setdefault(u, []).append((v, w))
-        adj.setdefault(v, []).append((u, w))
-
+    adj = make_adjacency_list(edges)
     result: list[WeightedEdge] = []
     edge_heap: list[WeightedEdge] = []
 
@@ -59,3 +55,11 @@ def prim(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
                 heappush(edge_heap, (v_neighbor_edge_weight, v, v_neighbor))
     
     return result
+
+
+def make_adjacency_list(edges: Sequence[WeightedEdge]) -> AdjacencyList:
+    adj: AdjacencyList = {}
+    for u, v, w in edges:
+        adj.setdefault(u, []).append((v, w))
+        adj.setdefault(v, []).append((u, w))
+    return adj

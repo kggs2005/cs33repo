@@ -9,9 +9,9 @@ type WeightedEdge = tuple[int, int, int]
 def kruskal(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
     """
     Kruskal's algorithm is a greedy algorithm used to determine the minimum spanning
-    tree of a given graph. It does this by sorting all the edges in increasing order
-    of weight, then starting from the lowest-weight edge, starts adding all the edges
-    one by one as long as including the edge does not introduce a cycle.
+    tree of an undirected graph. It does this by sorting all the edges in increasing
+    order of weight, then starting from the lowest-weight edge, starts adding all the
+    edges one by one as long as including the edge does not introduce a cycle.
 
     Union Find is used to check whether two nodes are connected quickly.
 

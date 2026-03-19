@@ -29,11 +29,11 @@ def floyd_warshall(edges: Sequence[WeightedEdge]) -> dict[int, dict[int, int | f
     """
     distance: dict[int, dict[int, int | float]] = {}
 
-    # This algorithm doesn't assume that nodes are labeled from 0 to n - 1
     node_set: set[int] = set()
     for u, v, _ in edges:
         node_set.add(u)
         node_set.add(v)
+    
     nodes = list(sorted(node_set))
 
     for i in nodes:

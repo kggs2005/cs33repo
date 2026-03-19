@@ -48,12 +48,10 @@ def bellman_ford(edges: Sequence[WeightedEdge], start: int) -> dict[int, int | f
 
     def augment() -> bool:
         augmented = False
-
         for i, j, c in edges:
             if distance[j] > distance[i] + c:
                 distance[j] = distance[i] + c
                 augmented = True
-
         return augmented
 
     for _ in range(len(nodes)):

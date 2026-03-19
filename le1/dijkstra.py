@@ -26,12 +26,8 @@ def dijkstra(edges: Sequence[WeightedEdge], start: int) -> dict[int, int]:
         `node i`. If `node i` is unreachable from `start`, then `i` will not a key in
         `d`.
     """
+    adj = make_adjacency_list(edges)
     distance: dict[int, int] = {}
-    
-    adj: AdjacencyList = {}
-    for u, v, w in edges:
-        adj.setdefault(u, []).append((v, w)) # Directed edges
-    
     visited: set[int] = set()
     node_heap: list[tuple[int, int]] = [(0, start)]
 
@@ -48,3 +44,10 @@ def dijkstra(edges: Sequence[WeightedEdge], start: int) -> dict[int, int]:
             heappush(node_heap, (current_distance + neighbor_edge_weight, neighbor))
     
     return distance
+
+
+def make_adjacency_list(edges: Sequence[WeightedEdge]):
+    adj: AdjacencyList = {}
+    for u, v, w in edges:
+        adj.setdefault(u, []).append((v, w))
+    return adj
