@@ -8,12 +8,9 @@ type AdjacencyList = dict[int, list[int]]
 def kosaraju(edges: Sequence[Edge]) -> list[list[int]]:
     """
     Kosaraju's algorithm is an algorithm that computes a directed graph's strongly
-    connected components, returning a list of int lists, where each int list is a
-    list of nodes in the same connected component.
-    
-    To obtain strongly connected components, Kosaraju's algorithm first performs DFS
-    on the directed graph, tracking the order of DFS in a stack. Note that the deeper
-    a node is in the DFS operation, the higher they are on the stack.
+    connected components. It does this by performing DFS on the directed graph, tracking
+    the order of DFS in a stack. Note that the deeper a node is in the DFS operation, the
+    higher they are on the stack.
     
     Afterwards, the graph is then reversed and DFS is performed again, starting with
     the deepest nodes. This algorithm posits that any nodes visited by the DFS starting
