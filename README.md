@@ -41,5 +41,10 @@
 
 ## LE 4
 
+## Utils
+Some of the above implementations use already known data structures.
+- [Union Find](utils/union_find.py)
+- [Segment Tree](utils/segment_tree.py)
+
 ## Notes
 - The code in this repository uses verbose variable names and long comments to help you better understand a data structure or algorithm. However, you may want to use shorter variable names (`node_count` instead of `n`) and use types with less overhead (e.g. `list` instead of `dict` for adjacency lists) when you implement these data structures and algorithms yourself to save time and reduce code file sizes.
