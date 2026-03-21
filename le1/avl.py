@@ -114,7 +114,9 @@ class _AVLNode:
             value (int): The value to insert.
         
         Returns:
-            tuple[_AVLNode|None,bool]: The new root of the subtree and whether insertion succeeded.
+            tuple[_AVLNode|None,bool]:
+                - The new root of the subtree.
+                - Whether insertion succeeded.
         """
         if node is None:
             return _AVLNode(value), True
@@ -138,7 +140,9 @@ class _AVLNode:
             value (int): The value to delete.
         
         Returns:
-            tuple[_AVLNode|None,bool]: The new root of the subtree and whether deletion succeeded.
+            tuple[_AVLNode|None,bool]:
+                - The new root of the subtree.
+                - Whether insertion succeeded.
         """
         if node is None:
             return None, False

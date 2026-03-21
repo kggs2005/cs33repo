@@ -17,15 +17,18 @@
 - [Dijkstra's Algorithm](le1/dijkstra.py)
 - [Bellman-Ford Algorithm](le1/bellman_ford.py)
 
-## Self-Balancing Binary Search Trees
+### Self-Balancing Binary Search Trees
 - [Treap](le1/treap.py)
 - [AVL Tree](le1/avl.py)
 
-## Algorithms for Obtaining Strongly Connected Components
+### Algorithms for Obtaining Strongly Connected Components
 - [Kosaraju's Algorithm](le1/kosaraju.py)
 - [Tarjan's SCC Algorithm](le1/tarjan_scc.py)
 
 ## LE 2
+
+### Max Flow Min Cut Algorithms
+- [Edmonds-Karp Algorithm](le2/edmonds_karp.py)
 
 ### Maximum Matching Algorithms
 - [Kuhn's Algorithm](le2/kuhn.py)

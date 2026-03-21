@@ -117,7 +117,9 @@ class _TreapNode:
             value (int): The value to insert.
         
         Returns:
-            tuple[_TreapNode|None,bool]: The new root of the subtree and whether insertion succeeded.
+            tuple[_TreapNode|None,bool]:
+                - The new root of the subtree.
+                - Whether insertion succeeded.
         """
         if _TreapNode.search(node, value) is not None:
             return node, False
@@ -137,7 +139,9 @@ class _TreapNode:
             value (int): The value to delete.
         
         Returns:
-            tuple[_TreapNode|None,bool]: The new root of the subtree and whether deletion succeeded.
+            tuple[_TreapNode|None,bool]:
+                - The new root of the subtree.
+                - Whether insertion succeeded.
         """
         if _TreapNode.search(node, value) is None:
             return node, False
