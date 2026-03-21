@@ -3,7 +3,6 @@
 ## This repository is a work in progress.
 
 - This repository contains Python implementations of algorithms in CS 33 so far.
-- This repository will **NOT** include data structures that would usually be made in C, such as treaps, AVL trees, and persistent data structures.
 
 ## Table of Contents
 
@@ -17,6 +16,10 @@
 - [Floyd-Warshall Algorithm](le1/floyd_warshall.py)
 - [Dijkstra's Algorithm](le1/dijkstra.py)
 - [Bellman-Ford Algorithm](le1/bellman_ford.py)
+
+## Self-Balancing Binary Search Trees
+- [Treap](le1/treap.py)
+- [AVL Tree](le1/avl.py)
 
 ## Algorithms for Obtaining Strongly Connected Components
 - [Kosaraju's Algorithm](le1/kosaraju.py)

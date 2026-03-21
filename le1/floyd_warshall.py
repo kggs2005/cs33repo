@@ -24,8 +24,8 @@ def floyd_warshall(edges: Sequence[WeightedEdge]) -> dict[int, dict[int, int | f
     
     Returns:
         dict[int,dict[int,int|float]]: A 2-dimensional dictionary of the distances between
-        any two nodes. If two nodes are unreachable from each other, then the value is
-        `infinity`.
+        any two nodes. That is, if `d` is the dictionary, then `d[i][j]` is the distance
+        from `i` and `j`. If `j` is unreachable from `i`, then `d[i][j] = inf`.
     """
     distance: dict[int, dict[int, int | float]] = {}
 
