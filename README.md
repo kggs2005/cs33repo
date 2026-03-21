@@ -1,4 +1,4 @@
-# CS 33 Algorithm Repository
+# CS 33 Data Structures and Algorithms Repository
 
 ## This repository is a work in progress.
 
@@ -47,4 +47,4 @@ Some of the above implementations use already known data structures.
 - [Segment Tree](utils/segment_tree.py)
 
 ## Notes
-- The code in this repository uses verbose variable names and long comments to help you better understand a data structure or algorithm. However, you may want to use shorter variable names (`node_count` instead of `n`) and use types with less overhead (e.g. `list` instead of `dict` for adjacency lists) when you implement these data structures and algorithms yourself to save time and reduce code file sizes.
+- The code in this repository uses verbose variable names and long comments to help you better understand a data structure or algorithm. However, you may want to use shorter variable names (`n` instead of `node_count`) and use types with less overhead (e.g. `list` instead of `dict` for adjacency lists) when you implement these data structures and algorithms yourself to save time and reduce code file sizes.
