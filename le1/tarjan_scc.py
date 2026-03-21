@@ -20,7 +20,7 @@ def tarjan_scc(edges: Sequence[Edge]) -> list[list[int]]:
         list[list[int]]: A list of int lists, each int list being a list of the nodes that
             define a strongly connected component.
     """
-    adj = make_adjacency_list(edges)
+    adj = _make_adjacency_list(edges)
 
     nodes: set[int] = set()
     for u, v in edges:
@@ -76,7 +76,7 @@ def tarjan_scc(edges: Sequence[Edge]) -> list[list[int]]:
     return all_sccs
 
 
-def make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
+def _make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
     adj: AdjacencyList = {}
     for u, v in edges:
         adj.setdefault(u, []).append(v)

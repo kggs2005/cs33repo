@@ -25,7 +25,7 @@ def kosaraju(edges: Sequence[Edge]) -> list[list[int]]:
         list[list[int]]: A list of int lists, each int list being a list of the nodes that
             define a strongly connected component.
     """
-    adj_normal = make_adjacency_list(edges)
+    adj_normal = _make_adjacency_list(edges)
     node_stack: list[int] = []
     visited: set[int] = set()
     
@@ -45,7 +45,7 @@ def kosaraju(edges: Sequence[Edge]) -> list[list[int]]:
         if current_node not in visited:
             dfs(current_node, adj_normal, node_stack)
     
-    adj_reverse = make_adjacency_list([(v, u) for u, v in edges])
+    adj_reverse = _make_adjacency_list([(v, u) for u, v in edges])
     visited.clear()
 
     all_sccs: list[list[int]] = []
@@ -59,7 +59,7 @@ def kosaraju(edges: Sequence[Edge]) -> list[list[int]]:
     return all_sccs
 
 
-def make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
+def _make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
     adj: AdjacencyList = {}
     for u, v in edges:
         adj.setdefault(u, []).append(v)

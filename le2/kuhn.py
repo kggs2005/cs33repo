@@ -24,7 +24,7 @@ def kuhn(edges: Sequence[Edge]) -> list[Edge]:
     if len(edges) == 0:
         return []
 
-    adj = make_adjacency_list(edges)
+    adj = _make_adjacency_list(edges)
     left_partner: dict[int, int] = {} # A match would be (left_partner[r], r)
     visited: set[int] = set()
 
@@ -48,7 +48,7 @@ def kuhn(edges: Sequence[Edge]) -> list[Edge]:
     return matches
 
 
-def make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
+def _make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
     adj: AdjacencyList = {}
     for u, v in edges:
         adj.setdefault(u, []).append(v)

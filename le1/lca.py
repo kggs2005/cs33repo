@@ -3,7 +3,7 @@ from math import ceil, log2
 
 
 type Edge = tuple[int, int]
-type AdjacencyList = dict[int, list[_LCANode]]
+type AdjacencyList = dict[int, list[LCAFinder.Node]]
 
 
 class LCAFinder:
@@ -20,11 +20,27 @@ class LCAFinder:
     Raises:
         ValueError: If the given `root` is not present in the tree.
     """
+    class Node:
+        """
+        Represents a node in the tree used for LCA computation.
+        """
+        def __init__(self, label: int) -> None:
+            self._label = label
+            self.depth = 0
+            self.parent = self
+            self.adjacent_nodes: list[LCAFinder.Node] = []
+            self.ancestors: dict[int, LCAFinder.Node] = {}
+        
+        @property
+        def label(self) -> int:
+            """The label of the node."""
+            return self._label
+
     def __init__(self, edges: Sequence[Edge], root: int) -> None:
-        self.nodes: dict[int, _LCANode] = {}
+        self.nodes: dict[int, LCAFinder.Node] = {}
         for u, v in edges:
-            self.nodes.setdefault(u, _LCANode(u))
-            self.nodes.setdefault(v, _LCANode(v))
+            self.nodes.setdefault(u, LCAFinder.Node(u))
+            self.nodes.setdefault(v, LCAFinder.Node(v))
         
         if root not in self.nodes:
             raise ValueError(f"Given root {root} is not in the tree.")
@@ -36,7 +52,7 @@ class LCAFinder:
             self.nodes[u].adjacent_nodes.append(self.nodes[v])
             self.nodes[v].adjacent_nodes.append(self.nodes[u])
         
-        def dfs(current_node: _LCANode, parent: _LCANode, depth: int) -> None:
+        def dfs(current_node: LCAFinder.Node, parent: LCAFinder.Node, depth: int) -> None:
             current_node.depth = depth
             for neighboring_node in current_node.adjacent_nodes:
                 if neighboring_node is not parent:
@@ -89,16 +105,16 @@ class LCAFinder:
         
         return node_u.parent.label
     
-    def _climb(self, node: _LCANode, levels: int) -> _LCANode:
+    def _climb(self, node: LCAFinder.Node, levels: int) -> LCAFinder.Node:
         """
-        Moves a node up the tree by a given number of `levels` using binary lifting.
+        Moves a node up the tree by a given number `levels` using binary lifting.
 
         Parameters:
-            node (_LCANode): The node to climb from.
+            node (LCAFinder.Node): The node to climb from.
             levels (int): The number of levels to climb.
 
         Returns:
-            _LCANode: The ancestor node after climbing the specified number of levels.
+            LCAFinder.Node: The ancestor node after climbing the specified number of levels.
         """
         for k in range(self._height, -1, -1):
             if levels >= 1 << k:
@@ -107,21 +123,3 @@ class LCAFinder:
         
         assert levels <= 0
         return node
-        
-
-class _LCANode:
-    """
-    Represents a node in the tree used for LCA computation.
-    """
-    def __init__(self, label: int) -> None:
-        self._label = label
-        self.depth = 0
-        self.parent = self
-        self.adjacent_nodes: list[_LCANode] = []
-        self.ancestors: dict[int, _LCANode] = {}
-    
-    @property
-    def label(self) -> int:
-        """The label of the node."""
-        return self._label
-    
