@@ -32,6 +32,9 @@
 
 ## LE 2
 
+### Persistent Data Structures
+- [Persistent Stack](le2/persistent_stack.py)
+
 ### Max Flow Min Cut Algorithms
 - [Edmonds-Karp Algorithm](le2/edmonds_karp.py)
 
