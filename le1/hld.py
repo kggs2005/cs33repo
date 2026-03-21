@@ -76,7 +76,7 @@ class HLD:
         """
         if u not in self.nodes or v not in self.nodes:
             raise KeyError("One or both nodes not in the tree")
-        lca = self._lca_finder.least_common_ancestor(u, v)
+        lca = self._lca_finder.lowest_common_ancestor(u, v)
         node_u = self.nodes[u]
         node_v = self.nodes[v]
         node_lca = self.nodes[lca]
@@ -91,7 +91,7 @@ class HLD:
         """
         if u not in self.nodes or v not in self.nodes:
             raise KeyError("One or both nodes not in the tree")
-        lca = self._lca_finder.least_common_ancestor(u, v)
+        lca = self._lca_finder.lowest_common_ancestor(u, v)
         node_u = self.nodes[u]
         node_v = self.nodes[v]
         node_lca = self.nodes[lca]
@@ -106,7 +106,7 @@ class HLD:
         """
         if u not in self.nodes or v not in self.nodes:
             raise KeyError("One or both nodes not in the tree")
-        lca = self._lca_finder.least_common_ancestor(u, v)
+        lca = self._lca_finder.lowest_common_ancestor(u, v)
         node_u = self.nodes[u]
         node_v = self.nodes[v]
         node_lca = self.nodes[lca]
@@ -116,14 +116,14 @@ class HLD:
     
     def query_lca(self, u: int, v: int) -> int:
         """
-        Returns label of the least common ancestor of nodes `u` and `v`.
+        Returns label of the lowest common ancestor of nodes `u` and `v`.
         
         Parameters:
             u (int): The first node.
             v (int): The second second.
         
         Returns:
-            int: The label of the least common ancestor.
+            int: The label of the lowest common ancestor.
         
         Raises:
             KeyError: If either `u` or `v` do not exist in the tree.
@@ -132,7 +132,7 @@ class HLD:
             raise KeyError(f"Given node {u} is not in the tree")
         if v not in self.nodes:
             raise KeyError(f"Given node {v} is not in the tree")
-        return self._lca_finder.least_common_ancestor(u, v)
+        return self._lca_finder.lowest_common_ancestor(u, v)
     
     def _query_up(self, node: HLD.Node, ancestor: HLD.Node, segtree: SegmentTree) -> int:
         """

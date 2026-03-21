@@ -25,8 +25,8 @@
 - [Kosaraju's Algorithm](le1/kosaraju.py)
 - [Tarjan's SCC Algorithm](le1/tarjan_scc.py)
 
-### Least Common Ancestor and Range Queries
-- [Least Common Ancestor](le1/lca.py)
+### Lowest Common Ancestor and Range Queries
+- [Lowest Common Ancestor](le1/lca.py)
 - [Heavy Light Decomposition](le1/hld.py)
 
 ## LE 2

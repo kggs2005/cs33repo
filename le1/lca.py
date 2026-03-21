@@ -8,7 +8,7 @@ type AdjacencyList = dict[int, list[LCAFinder.Node]]
 
 class LCAFinder:
     """
-    Data structure that can find the least common ancestor (LCA) of any two nodes
+    Data structure that can find the lowest common ancestor (LCA) of any two nodes
     using binary lifting, allowing it to have `O(n log n)` preprocessing time and
     `O(log n)` query time.
 
@@ -68,16 +68,16 @@ class LCAFinder:
                 parent = node.ancestors.get(k - 1, node)
                 node.ancestors[k] = parent.ancestors.get(k - 1, parent)
     
-    def least_common_ancestor(self, u: int, v: int) -> int:
+    def lowest_common_ancestor(self, u: int, v: int) -> int:
         """
-        Returns the least common ancestor (LCA) of nodes `u` and `v`.
+        Returns the lowest common ancestor (LCA) of nodes `u` and `v`.
 
         Parameters:
             u (int): The label of the first node.
             v (int): The label of the second node.
 
         Returns:
-            int: The label of the least common ancestor node.
+            int: The label of the lowest common ancestor node.
 
         Raises:
             KeyError: If either `u` or `v` is not present in the tree.
