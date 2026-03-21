@@ -28,6 +28,7 @@
 ### Lowest Common Ancestor and Range Queries
 - [Lowest Common Ancestor](le1/lca.py)
 - [Heavy Light Decomposition](le1/hld.py)
+- [Centroid Decomposition](le1/centroid.py)
 
 ## LE 2
 
