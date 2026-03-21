@@ -28,7 +28,7 @@ def prim(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
     Returns:
         list[Edge]: The edges of the resulting MST.
     """
-    adj = _make_adjacency_list(edges)
+    adj = make_adjacency_list(edges)
     result: list[WeightedEdge] = []
     edge_heap: list[WeightedEdge] = []
 
@@ -57,7 +57,7 @@ def prim(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
     return result
 
 
-def _make_adjacency_list(edges: Sequence[WeightedEdge]) -> AdjacencyList:
+def make_adjacency_list(edges: Sequence[WeightedEdge]) -> AdjacencyList:
     adj: AdjacencyList = {}
     for u, v, w in edges:
         adj.setdefault(u, []).append((v, w))

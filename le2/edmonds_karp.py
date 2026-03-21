@@ -76,7 +76,7 @@ def edmonds_karp(edges: Sequence[WeightedEdge], source: int, sink: int) -> tuple
             - The maximum flow from `source` to `sink`
             - The list of edges that form the minimum cut separating `source` from `sink`.
     """
-    adj = _make_adjacency_list(edges)
+    adj = make_adjacency_list(edges)
 
     def augmenting_path() -> list[_FlowEdge] | None:
         visited: set[int] = set()
@@ -136,7 +136,7 @@ def edmonds_karp(edges: Sequence[WeightedEdge], source: int, sink: int) -> tuple
     return total_flow, min_cut_edges
 
 
-def _make_adjacency_list(edges: Sequence[WeightedEdge]) -> AdjacencyList:
+def make_adjacency_list(edges: Sequence[WeightedEdge]) -> AdjacencyList:
     adj: AdjacencyList = {}
     flow_edges = [_FlowEdge(u, v, w) for u, v, w in edges]
     for flow_edge in flow_edges:

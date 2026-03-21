@@ -20,7 +20,7 @@ def tarjan_scc(edges: Sequence[Edge]) -> list[list[int]]:
         list[list[int]]: A list of int lists, each int list being a list of the nodes that
             define a strongly connected component.
     """
-    adj = _make_adjacency_list(edges)
+    adj = make_adjacency_list(edges)
 
     nodes: set[int] = set()
     for u, v in edges:
@@ -33,7 +33,7 @@ def tarjan_scc(edges: Sequence[Edge]) -> list[list[int]]:
     node_stack: list[int] = []
     nodes_in_stack: set[int] = set()
     all_sccs: list[list[int]] = []
-    time = [0]
+    time = 0
 
     def get_scc(last_node: int) -> None:
         scc: list[int] = []
@@ -46,9 +46,10 @@ def tarjan_scc(edges: Sequence[Edge]) -> list[list[int]]:
         all_sccs.append(scc)
 
     def dfs(current_node: int) -> None:
-        discovery_time[current_node] = time[0]
-        lowest_discovery_time_visitable[current_node] = time[0]
-        time[0] += 1
+        nonlocal time
+        discovery_time[current_node] = time
+        lowest_discovery_time_visitable[current_node] = time
+        time += 1
 
         node_stack.append(current_node)
         nodes_in_stack.add(current_node)
@@ -76,7 +77,7 @@ def tarjan_scc(edges: Sequence[Edge]) -> list[list[int]]:
     return all_sccs
 
 
-def _make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
+def make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
     adj: AdjacencyList = {}
     for u, v in edges:
         adj.setdefault(u, []).append(v)

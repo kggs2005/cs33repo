@@ -21,7 +21,7 @@ def hierholzer(edges: Sequence[Edge], start: int) -> list[Edge]:
         list[Edge]: The sequence of edges for the Eulerien walk, preserving the endpoint
             order of the edges as they was given.
     """
-    adj = _make_adjacency_list(edges)
+    adj = make_adjacency_list(edges)
     circuit: list[Edge] = []
     node_stack: list[int] = [start]
 
@@ -40,7 +40,7 @@ def hierholzer(edges: Sequence[Edge], start: int) -> list[Edge]:
     return circuit
         
 
-def _make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
+def make_adjacency_list(edges: Sequence[Edge]) -> AdjacencyList:
     adj: AdjacencyList = {}
     for u, v in edges:
         adj.setdefault(u, set()).add((u, v))
