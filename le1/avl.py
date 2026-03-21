@@ -23,7 +23,7 @@ class AVLTree:
         Returns `True` if `value` exists in the AVL tree, and `False` otherwise. If the
         AVL tree is empty, `False` is returned automatically
 
-        Args:
+        Parameters:
             value (int): The value to search for.
         
         Returns:
@@ -35,7 +35,7 @@ class AVLTree:
         """
         Inserts a new value into the AVL tree if it doesn't exist.
 
-        Args:
+        Parameters:
             value (int): The value to insert.
         
         Returns:
@@ -50,7 +50,7 @@ class AVLTree:
         """
         Removes a value from the AVL tree if it exists.
 
-        Args:
+        Parameters:
             value (int): The value to remove.
         
         Returns:
@@ -88,7 +88,7 @@ class _AVLNode:
         """
         Searches for a value in the AVL tree starting from the given node.
 
-        Args:
+        Parameters:
             node (_AVLNode | None): The root of the subtree to search.
             value (int): The value to search for.
         
@@ -109,7 +109,7 @@ class _AVLNode:
         """
         Inserts a new value into the AVL tree rooted at `node`.
 
-        Args:
+        Parameters:
             node (_AVLNode | None): The root of the subtree.
             value (int): The value to insert.
         
@@ -135,7 +135,7 @@ class _AVLNode:
         """
         Deletes a value from the AVL tree rooted at `node`.
 
-        Args:
+        Parameters:
             node (_AVLNode | None): The root of the subtree.
             value (int): The value to delete.
         
@@ -174,7 +174,7 @@ class _AVLNode:
         """
         Rebalances the AVL tree rooted at `node` if it is imbalanced.
 
-        Args:
+        Parameters:
             node (_AVLNode): The root of the subtree.
         
         Returns:
@@ -205,7 +205,7 @@ class _AVLNode:
         """
         Performs a left rotation on the given node.
 
-        Args:
+        Parameters:
             node (_AVLNode): The root of the subtree to rotate.
         
         Returns:
@@ -226,7 +226,7 @@ class _AVLNode:
         """
         Performs a right rotation on the given node.
 
-        Args:
+        Parameters:
             node (_AVLNode): The root of the subtree to rotate.
         
         Returns:

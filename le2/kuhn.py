@@ -11,7 +11,7 @@ def kuhn(edges: Sequence[Edge]) -> list[Edge]:
     bipartite graph. It does this by continuously rematching alternating
     left and right until a node cannot find another match.
 
-    Args:
+    Parameters:
         edges (Sequence[Edge]): The edges of the bipartite graph, where
             each edge is a tuple `(l, r)` where `l` is a node in the left
             graph and `r` is a node in the right graph.

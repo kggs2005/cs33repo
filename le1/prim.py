@@ -20,7 +20,7 @@ def prim(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
     Given a graph with `n` nodes and `e` edges, this algorithm runs in `O(e log e)`
     time (being bottlenecked by the minheap operations) and takes up `O(n + e)` space.
 
-    Args:
+    Parameters:
         edges (Sequence[WeightedEdge]): The edges of the graph, each edge being a
             tuple `(u, v, w)` where `u` and `v` are the two endpoints and `w` is the
             weight.
@@ -32,7 +32,7 @@ def prim(edges: Sequence[WeightedEdge]) -> list[WeightedEdge]:
     result: list[WeightedEdge] = []
     edge_heap: list[WeightedEdge] = []
 
-    total_node_count = len(adj.keys())
+    total_node_count = len(adj)
     start_node = list(adj.keys())[0] # Arbitrary starting node
     connected_nodes = {start_node}
 

@@ -65,7 +65,7 @@ def edmonds_karp(edges: Sequence[WeightedEdge], source: int, sink: int) -> tuple
     This algorithm runs in both O(ne^2) and O(nk) where `n` is the number of nodes, `e`
     is the number of edges, and `k` is the number of augmentations.
 
-    Args:
+    Parameters:
         edges (Sequence[WeightedEdge]): The edges of the graph, where each edge is a tuple
             `(u, v, w)` such that an edge of capacity `w` connects from `u` to `v`.
         source (int): The node where the flow starts.

@@ -26,7 +26,7 @@ class Treap:
         Returns `True` if `value` exists in the treap, and `False` otherwise. If the
         treap is empty, `False` is returned automatically
 
-        Args:
+        Parameters:
             value (int): The value to search for.
         
         Returns:
@@ -38,7 +38,7 @@ class Treap:
         """
         Inserts a new value into the treap if it doesn't exist.
 
-        Args:
+        Parameters:
             value (int): The value to insert.
         
         Returns:
@@ -53,7 +53,7 @@ class Treap:
         """
         Removes a value from the treap if it exists.
 
-        Args:
+        Parameters:
             value (int): The value to remove.
         
         Returns:
@@ -91,7 +91,7 @@ class _TreapNode:
         """
         Searches for a value in the treap starting from the given node.
 
-        Args:
+        Parameters:
             node (_TreapNode | None): The root of the subtree to search.
             value (int): The value to search for.
         
@@ -112,7 +112,7 @@ class _TreapNode:
         """
         Inserts a new value into the treap rooted at `node`.
 
-        Args:
+        Parameters:
             node (_TreapNode | None): The root of the subtree.
             value (int): The value to insert.
         
@@ -134,7 +134,7 @@ class _TreapNode:
         """
         Deletes a value from the treap rooted at `node`.
 
-        Args:
+        Parameters:
             node (_TreapNode | None): The root of the subtree.
             value (int): The value to delete.
         
@@ -158,7 +158,7 @@ class _TreapNode:
             - middle: node with value equal to `value` (or `None` if not found)
             - right: nodes with values greater than `value`
 
-        Args:
+        Parameters:
             node (_TreapNode | None): The root of the subtree.
             value (int): The value to split around.
         
@@ -185,7 +185,7 @@ class _TreapNode:
         """
         Merges two treaps into one while maintaining both the BST and heap properties.
 
-        Args:
+        Parameters:
             left (_TreapNode | None): Root of the left treap.
             right (_TreapNode | None): Root of the right treap.
         

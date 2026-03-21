@@ -17,7 +17,7 @@ def floyd_warshall(edges: Sequence[WeightedEdge]) -> dict[int, dict[int, int | f
     Given a graph with `n` nodes and `e` edges, this algorithm runs in `O(n^3 + e)`
     time and takes up `O(n^2)` space.
 
-    Args:
+    Parameters:
         edges (Sequence[WeightedEdge]): The edges of the graph, each edge being a
             tuple `(u, v, w)` where `u` and `v` are the two endpoints and `w` is the
             weight.

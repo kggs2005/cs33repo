@@ -12,7 +12,7 @@ def tarjan_scc(edges: Sequence[Edge]) -> list[list[int]]:
     information about the DFS, particularly the nodes' discovery time and lowest discovery
     time of any visitable node, allowing it to perform DFS only once unlike Kosaraju's.
 
-    Args:
+    Parameters:
         edges (Sequence[Edge]): The edges of the graph, each edge being a tuple `(u, v)`
             where `u` has an edge directed to `v`.
     

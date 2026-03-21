@@ -17,7 +17,7 @@ def kosaraju(edges: Sequence[Edge]) -> list[list[int]]:
     at the node at the top of the stack are in the same strongly connected component
     as that node.
 
-    Args:
+    Parameters:
         edges (Sequence[Edge]): The edges of the graph, each edge being a tuple `(u, v)`
             where `u` has an edge directed to `v`.
     

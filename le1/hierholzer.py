@@ -10,7 +10,7 @@ def hierholzer(edges: Sequence[Edge], start: int) -> list[Edge]:
     constantly starting a walk from the current node to itself while there are
     unused edges.
 
-    Args:
+    Parameters:
         edges (Sequence[Edge]): The edges of the graph, each edge being a tuple `(u, v)`
             where `u` and `v` are the endpoints of the edge.
         start (int): The node to start the Eulerien walk from. Due to the property of a
