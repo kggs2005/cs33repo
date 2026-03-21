@@ -39,13 +39,13 @@ def find_centroid(edges: Sequence[Edge]) -> int:
     dfs(root, None)
 
     def find(current_node: int, parent: int | None, centroid: int) -> int:
-        max_subtree = 0
+        max_subtree_size = 0
         for neighboring_node in adj[current_node]:
             if neighboring_node != parent:
                 centroid = find(neighboring_node, current_node, centroid)
-                max_subtree = max(max_subtree, sizes[neighboring_node])
-        max_subtree = max(max_subtree, node_count - sizes[current_node])
-        if max_subtree <= node_count // 2:
+                max_subtree_size = max(max_subtree_size, sizes[neighboring_node])
+        max_subtree_size = max(max_subtree_size, node_count - sizes[current_node])
+        if max_subtree_size <= node_count // 2:
             centroid = current_node
         return centroid
 
