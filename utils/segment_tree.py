@@ -2,18 +2,23 @@ from collections.abc import Callable
 
 
 class SegmentTree:
+    """
+    A segment tree is a binary tree that supports fast range queries in `O(log n)` time, where
+    `n` is the number of values in the range. It does this by "segmenting" each half into their
+    own local subtree and saving their aggregate range query.
+    """
     class Node:
-        def __init__(self, left_index: int, right_index: int, value: int, default: int, operation: Callable[[int, int], int]) -> None:
-            """
-            Represents a node in the segment tree.
+        """
+        Represents a node in the segment tree.
 
-            Parameters:
-                left_index (int): Left index of the segment.
-                right_index (int): Right index of the segment.
-                value (int): The aggregated value for this segment.
-                default (int): The default value for empty segments.
-                operation (Callable[[int,int],int]): The aggregation operation (sum, min, max).
-            """
+        Parameters:
+            left_index (int): Left index of the segment.
+            right_index (int): Right index of the segment.
+            value (int): The aggregated value for this segment.
+            default (int): The default value for empty segments.
+            operation (Callable[[int,int],int]): The aggregation operation (sum, min, max).
+        """
+        def __init__(self, left_index: int, right_index: int, value: int, default: int, operation: Callable[[int, int], int]) -> None:
             self._left_index = left_index
             self._right_index = right_index
             self.value = value

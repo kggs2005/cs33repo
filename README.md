@@ -3,6 +3,7 @@
 ## This repository is a work in progress.
 
 - This repository contains Python implementations of algorithms in CS 33 so far.
+- I will **NOT** implement persistent AVL trees (I'm too lazy).
 
 ## Table of Contents
 
@@ -42,6 +43,8 @@
 - [Kuhn's Algorithm](le2/kuhn.py)
 
 ## LE 3
+- [Euclid's Algorithm and Linear Diophantine Equations](le3/euclid.py)
+- [Finding Prime Factors and Eratosthenes Sieve](le3/prime.py)
 
 ## LE 4
 
